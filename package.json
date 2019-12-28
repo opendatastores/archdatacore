@@ -1,0 +1,29 @@
+{
+  "name": "archdatacore",
+  "version": "3.0.0-alpha.52",
+  "description": "Providing Data Core Library",
+  "main": "./lib/index.js",
+  "typings": "./typings/index.d.ts",
+  "scripts": {
+    "build": "npm run cleanup && npm run build-ts",
+    "build-es5": "npm run cleanup && npm run build-ts-es5",
+    "build-es6": "npm run cleanup && npm run build-ts-es6",
+    "build-ts": "npm run tslint && tsc",
+    "build-ts-es5": "npm run tslint && tsc -p _tsconfigs/es5.tsconfig.json",
+    "build-ts-es6": "npm run tslint && tsc -p _tsconfigs/es6.tsconfig.json",
+    "tslint": "tslint -c tslint.json -p tsconfig.json",
+    "tslint-fix": "tslint -c tslint.json -p tsconfig.json --fix",
+    "cleanup": "node _scripts/cleanup",
+    "aftertests": "node _scripts/aftertests",
+    "prepublishOnly": "npm i && npm run build"
+  },
+  "license": "MIT",
+  "repository": "git+https://github.com/opendatastores/archdatacore",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "*",
+    "shelljs": "*",
+    "tslint": "*",
+    "typescript": "*"
+  }
+}
