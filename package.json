@@ -1,6 +1,6 @@
 {
   "name": "archdatacore",
-  "version": "3.0.0-alpha.52",
+  "version": "3.0.0-alpha.53",
   "description": "Providing Data Core Library",
   "main": "./lib/index.js",
   "typings": "./typings/index.d.ts",
