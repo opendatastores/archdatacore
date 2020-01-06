@@ -3,5 +3,5 @@ import { IDataConnect } from "./IDataConnect";
 type AnyConnectorConfigs = any;
 type AnyConnectOptions = any;
 
-export type IDataConnector<ConnectorConfigs = AnyConnectorConfigs, ConnectOptions = AnyConnectOptions> =
+export type DataConnector<ConnectorConfigs = AnyConnectorConfigs, ConnectOptions = AnyConnectOptions> =
   (configs: ConnectorConfigs) => IDataConnect<ConnectOptions>;

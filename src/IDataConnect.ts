@@ -2,4 +2,6 @@ import { IDataContext } from "./IDataContext";
 
 type AnyConnectOptions = any;
 
-export type IDataConnect<ConnectOptions = AnyConnectOptions> = (options?: ConnectOptions) => IDataContext;
+export interface IDataConnect<ConnectOptions = AnyConnectOptions>  {
+  connect: (options?: ConnectOptions) => Promise<IDataContext>;
+}
