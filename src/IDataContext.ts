@@ -1,5 +1,6 @@
 import { IRepository } from "./IRepository";
 
+type AnyClient = any;
 type AnyDatabase = any;
 type AnyCollection = any;
 type AnyID = any;
@@ -7,8 +8,9 @@ type AnyItem = any;
 
 export interface IAnyDataContext extends IDataContext<AnyDatabase, AnyCollection, AnyID> { }
 
-export interface IDataContext<Database = AnyDatabase, Collection = AnyCollection, ID = AnyID> {
+export interface IDataContext<Client = AnyClient, Database = AnyDatabase, Collection = AnyCollection, ID = AnyID> {
   newID: () => ID;
+  client: () => Promise<Client>;
   db: () => Promise<Database>;
   close: () => Promise<void>;
   createItem: <Item = AnyItem>(collection: string, item: Item, options?: any) => Promise<any>;
